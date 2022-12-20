@@ -115,18 +115,29 @@ let str = prompt("Entrez une chaine", "");
 console.log(uniqueV2(str));
 
 // Exercice 5
-let identity_matrix = function (n) {
-    let s = "";
-    for (let i = 0; i < n; i++) {
-        for (let i1 = 0; i1 < n; i1++) {
-            s += (i1 === i ? "1" : "0");
-        }
-        s += "\n";
-    }
-    return s;
-}
+//Sanaa OUARAZ 3IIR G42
 
-console.log(identity_matrix(5))
+function matrice(n) {
+
+    let i;
+    let j;
+
+    for (i=0; i < n; i++)
+    {
+      for (j=0; j < n; j++)
+      {
+           if (i === j)
+           {
+             console.log(' 1 ');
+           }
+           else
+            {
+             console.log(' 0 ');}
+            }
+         console.log('----------');
+       }
+   }
+matrice(4);
 
 // Exercice 5 (version 2)
 console.log((function (n) {
