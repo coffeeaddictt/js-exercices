@@ -300,6 +300,7 @@
 ## QROL (10 points)
 ### Comprendre et retenir
 ### Appliquer
+OUARAZ Sanaa 3IIR G42
 1. Écrivez un programme JavaScript pour calculer la somme des multiples de 3 et 5 inférieurs à 50 (utiliser une boucle for).
 
     Exemple :
@@ -307,7 +308,15 @@
 
     Réponses :
     ```javascript
-        //code
+    let somme = 0;
+    for (let x = 0; x < 50; x++)
+    {
+    if (x % 3 === 0 || x % 5 === 0)
+    {
+       somme += x;
+    }
+    }
+    console.log(somme)
     ```
 
 2. Écrivez un programme JavaScript pour séparer les valeurs paires et impaires d'un tableau en deux tableaux (l'ordre n'est pas important).
@@ -318,7 +327,18 @@
 
     Réponses :
     ```javascript
-        //code
+    function paireouimpaire(array) {
+    let impaire = [];
+    let paire = [];
+    for (i = 0; i < array.length; i++) {
+        if (array[i] % 2 === 0) {
+            paire.push(array[i]);
+        } else {
+            impaire.push(array[i]);
+        }
+    }
+    return {paire,impaire};
+    }
     ```
 
 ### Analyser
@@ -342,7 +362,45 @@
 
     Réponses :
     ```javascript
-        //code
+    function Chapitre(nom, nombre_pages, position) {
+    this.nom = nom;
+    this.nombre_pages = nombre_pages;
+    this.position = position;
+  }
+  Chapitre.prototype.chapitreLong = function () {
+    if (this.nombre_pages > 100) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  function Livre(id, titre, prix, chapitre = []) {
+    this.id = id;
+    this.titre = titre;
+    this.prix = prix;
+    this.chapitre = chapitre;
+  }
+  Livre.prototype.sauterLongsChapitres = function ()
+  {
+    for (let i = 0; i < this.chapitres.length; i++) {
+    if(this.chapitres[i].nombre_pages > 100)
+    {
+    this.chapitres.splice(i,1);
+    }
+    }
+  };
+  Livre.prototype.trierChapitre = function (position) {
+    this.Chapitre.sort(function (a, b) {
+      if (a[prop] < b[prop]) {
+        return -1;
+      } else if (a[prop] > b[prop]) {
+        return 1;
+      } else {
+        return 0;
+      }
+    });
+  };
     ```
 
 2. Écrivez un code PHP pour afficher les titres HTML de h1 à h6 (utiliser une boucle for).
@@ -357,10 +415,11 @@
 
     Réponses :
     ```php
-    <?php
-        //code
-    ?>
-    ```
+   <?php
+for ($i = 1; $i <= 6; $i++) {
+echo "<h$i>Titre $i</h$i>\n";
+}
+?>
 
 ## Remarques
 - Pour chaque question dans la partie QCM :
